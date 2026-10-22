@@ -1,0 +1,6 @@
+:root{--lav:#c9b8e8;--lav-d:#7c5fb0;--cream:#fbf5e9;--sage:#a9c3a0;--sage-d:#5f8157;--ink:#2d2640;--line:#2d2640}
+*{box-sizing:border-box}html,body,#root{height:100%;margin:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--lav);overflow:hidden}
+button,a{font:inherit}
+:focus-visible{outline:3px solid var(--lav-d);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
