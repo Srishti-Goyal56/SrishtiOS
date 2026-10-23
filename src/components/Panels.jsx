@@ -3,21 +3,66 @@ import { projects } from '../data/projects.js'
 export function Link({ href, children, primary }) {
   return <a className={`btn${primary ? ' primary' : ''}`} href={href} target="_blank" rel="noopener noreferrer">{children}</a>
 }
-export function About() {
-  return (<div><h2>Hi, I'm {profile.name} 👋</h2><p className="cat">{profile.subtitle}</p>
-    {profile.about.map(t => <p key={t}>{t}</p>)}
-    <h3>Education</h3>
-    {profile.education.map(e => (<div className="entry" key={e.title}><strong>{e.title}</strong><span className="when">{e.period}</span>
-      <p className="where">{e.place}</p><p>{e.detail}</p></div>))}
-    <h3>Experience</h3>
-    {profile.experience.map(e => (<div className="entry" key={e.title}><strong>{e.title}</strong><span className="when">{e.period}</span>
-      <p className="where">{e.place}</p><ul>{e.points.map(x => <li key={x}>{x}</li>)}</ul></div>))}
-    <h3>Skills</h3>
-    <div className="tags">{toolkit.flatMap(g => g.items).map(t => <span className="tag" key={t}>{t}</span>)}</div>
-    <h3>Certifications</h3><ul>{profile.certifications.map(c => <li key={c}>{c}</li>)}</ul>
-    <h3>Career interests</h3><div className="tags">{profile.interests.map(t => <span className="tag" key={t}>{t}</span>)}</div>
-    <h3>Contact</h3><ContactLinks /></div>)
+
+export function About(){
+  return (
+    <div>
+      <div className="about-header">
+        <img
+          src="/profile.jpg"
+          alt="My profile"
+          className="about-profile-photo"
+          onError={(e) => console.error("Profile photo failed to load", e)}
+        />
+        <div>
+          <h2>Hi, I'm {profile.name} 👋</h2>
+          <p className="cat">{profile.subtitle}</p>
+        </div>
+      </div>
+
+      {profile.about.map(t => <p key={t}>{t}</p>)}
+
+      <h3>Education</h3>
+      {profile.education.map(e => (
+        <div className="entry" key={e.title}>
+          <strong>{e.title}</strong>
+          <span className="when">{e.period}</span>
+          <p className="where">{e.place}</p>
+          <p>{e.detail}</p>
+        </div>
+      ))}
+
+      <h3>Experience</h3>
+      {profile.experience.map(e => (
+        <div className="entry" key={e.title}>
+          <strong>{e.title}</strong>
+          <span className="when">{e.period}</span>
+          <p className="where">{e.place}</p>
+          <ul>{e.points.map(x => <li key={x}>{x}</li>)}</ul>
+        </div>
+      ))}
+
+      <h3>Skills</h3>
+      <div className="tags">
+        {toolkit.flatMap(g => g.items).map(t => (
+          <span className="tag" key={t}>{t}</span>
+        ))}
+      </div>
+
+      <h3>Certifications</h3>
+      <ul>{profile.certifications.map(c => <li key={c}>{c}</li>)}</ul>
+
+      <h3>Career interests</h3>
+      <div className="tags">
+        {profile.interests.map(t => <span className="tag" key={t}>{t}</span>)}
+      </div>
+
+      <h3>Contact</h3>
+      <ContactLinks />
+    </div>
+  )
 }
+
 export function Toolkit() {
   return (<div>{toolkit.map(g => (<section key={g.title}><h3>{g.title}</h3><div className="tags">{g.items.map(i => <span className="tag" key={i}>{i}</span>)}</div></section>))}</div>)
 }

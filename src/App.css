@@ -44,3 +44,26 @@ h2{margin:.2em 0}h3{margin:1.2em 0 .3em;font-size:.8rem;text-transform:uppercase
 @media (max-width:640px){
  .icons{position:static;grid-template-columns:repeat(3,1fr);margin-top:12px}.hero{text-align:left;margin:0}
  .sticky{position:static;margin-top:16px;transform:none}.window{left:50%;transform:translate(-50%,-50%)!important}}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.about-profile-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #888;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .about-profile-photo {
+    width: 88px;
+    height: 88px;
+  }
+}
