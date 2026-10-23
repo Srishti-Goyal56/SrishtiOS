@@ -35,6 +35,12 @@ h2{margin:.2em 0}h3{margin:1.2em 0 .3em;font-size:.8rem;text-transform:uppercase
 .start{background:var(--sage);border:2px solid var(--line);border-radius:8px;padding:4px 12px;font-weight:700;cursor:pointer}
 .tasks{flex:1;display:flex;gap:6px;overflow-x:auto}.task{white-space:nowrap;background:#fff;border:2px solid var(--line);border-radius:8px;padding:3px 10px;cursor:pointer;font-size:.8rem}
 .task.on{background:var(--lav);box-shadow:inset 0 -3px 0 var(--lav-d)}.clock{font-family:'Courier New',monospace;font-weight:700}
+.entry{margin:0 0 .6em}.entry .when{float:right;font-family:'Courier New',monospace;font-size:.8rem;color:var(--lav-d)}.entry .where{margin:0;color:var(--sage-d);font-weight:600}
+.pgrid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.pcard{height:100%;display:flex;flex-direction:column;gap:8px;background:#fff;border:2px solid var(--line);border-radius:10px;padding:12px;box-shadow:3px 3px 0 var(--line)}
+.pmain{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:4px;flex:1}.pmain:hover strong{color:var(--lav-d)}.pmain:focus-visible{outline:3px solid var(--lav-d);outline-offset:2px;border-radius:6px}
+.pmain small{color:var(--sage-d);font-weight:600}.pintro{font-size:.9rem;line-height:1.45;overflow-wrap:anywhere}
+.pcard .actions{margin-top:auto;padding-top:4px}.pcard .btn{padding:4px 10px;font-size:.85rem}.tag.more{background:#efe8fb;border-color:var(--lav-d)}
 @media (max-width:640px){
  .icons{position:static;grid-template-columns:repeat(3,1fr);margin-top:12px}.hero{text-align:left;margin:0}
  .sticky{position:static;margin-top:16px;transform:none}.window{left:50%;transform:translate(-50%,-50%)!important}}

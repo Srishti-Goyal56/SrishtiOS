@@ -1,12 +1,41 @@
 # SrishtiOS
-Retro-desktop portfolio. React + Vite.
-## Run: `npm install` → `npm run dev` → `npm run build`
+
+Retro desktop-style portfolio of Srishti Goyal, a B.Tech Computer Science student (Cloud Engineering & DevOps Automation).
+Built with React 18 and Vite 5 (JavaScript).
+
+- Live: https://srishti-os-six.vercel.app/
+- GitHub: https://github.com/Srishti-Goyal56/SrishtiOS
+
+## Features
+- Desktop with icons, draggable-style windows, minimize/close and a taskbar
+- About Me window: education, Xebia internship, skills, certifications, interests and contact
+- My Projects folder: every project listed once, with a dynamic project count, GitHub and live-demo buttons (shown only when a link exists) and a detail window per project
+- Toolkit and Contact windows; resume served from `public/resume.pdf`
+
+## Run locally
+```
+npm install
+npm run dev       # development server
+npm run build     # production build into dist/
+npm run preview   # preview the production build
+```
+
 ## Edit content
-- Name, links, About, Toolkit: `src/data/profile.js` (fill `linkedin`, `email`, `resumeUrl`; empty = hidden in production)
-- Projects: `src/data/projects.js` (fill the `[Add ...]` placeholders, especially Landslide Risk Monitoring AI)
-- Resume: put `resume.pdf` in `public/`, set `resumeUrl: '/resume.pdf'`
-- Screenshots: put images in `public/images/`, set `images: ['/images/aiops.png']`
-## GitHub
-`git init && git add . && git commit -m "SrishtiOS" && git branch -M main && git remote add origin <your-repo-url> && git push -u origin main`
-## Netlify
-Add new site → Import from GitHub. Build command `npm run build`, publish directory `dist`. Every push to `main` redeploys.
+- Profile, About, experience, certifications, skills and contact links: `src/data/profile.js`
+- Projects: `src/data/projects.js` (leave `github` or `demo` empty to hide that button; never use localhost URLs)
+- Resume: replace `public/resume.pdf`
+- Screenshots: add images to `public/images/` and list them in a project's `images` array
+
+## Project structure
+```
+src/
+  App.jsx            window manager and desktop icons
+  App.css, index.css styles
+  components/        Desktop, DesktopIcon, Window, Taskbar, Panels, ProjectWindow
+  data/              profile.js, projects.js
+public/              resume.pdf, images/
+```
+
+## Deploy on Vercel
+The project is connected to Vercel (project `srishti-os`). Vercel detects Vite automatically (build command `npm run build`, output directory `dist`).
+Every push to the production branch (usually `main`) triggers a new deployment. Check progress on the project's Deployments tab in the Vercel dashboard.

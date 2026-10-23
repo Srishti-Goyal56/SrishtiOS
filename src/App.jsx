@@ -9,9 +9,9 @@ import { projects } from './data/projects.js'
 const apps = [
   { id: 'about', icon: '👩‍💻', label: 'About Me' }, { id: 'folder', icon: '📁', label: 'My Projects' },
   { id: 'toolkit', icon: '🧰', label: 'My Toolkit' }, { id: 'contact', icon: '✉️', label: 'Contact' },
-  ...projects.map(p => ({ id: p.id, icon: p.icon, label: p.name })),
 ]
-const titles = Object.fromEntries(apps.map(a => [a.id, a.label]))
+// Project windows are opened from the My Projects folder, so they get a title but no desktop icon.
+const titles = Object.fromEntries([...apps, ...projects.map(p => ({ id: p.id, label: p.name }))].map(a => [a.id, a.label]))
 
 export default function App() {
   const [wins, setWins] = useState([{ id: 'about', min: false }]) // order = stacking order
